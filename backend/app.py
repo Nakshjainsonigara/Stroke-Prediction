@@ -23,12 +23,11 @@ app = FastAPI()
 # Allow your frontend to communicate with your backend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # Update with your frontend URL if deployed
+    allow_origins=["*"],  # Update this to your frontend domain in production
     allow_credentials=True,
-    allow_methods=["*"],  # Or restrict methods like ['GET', 'POST']
+    allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # Define a root endpoint
 @app.get("/")
