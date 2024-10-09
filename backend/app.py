@@ -10,8 +10,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 
 # Load your pre-trained model and preprocessing pipeline
-model = joblib.load('lda_model.pkl')
-preprocessing_pipeline = joblib.load('preprocessing_pipeline.pkl')  # Assuming you saved the pipeline too
+model = joblib.load('backend\lda_model.pkl')
+preprocessing_pipeline = joblib.load('backend\lda_model.pkl')  # Assuming you saved the pipeline too
 
 # Initialize FastAPI app
 app = FastAPI()
