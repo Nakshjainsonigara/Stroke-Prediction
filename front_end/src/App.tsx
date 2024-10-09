@@ -89,7 +89,7 @@ export default function App() {
     e.preventDefault();
 
     try {
-      const res = await axios.post('http://localhost:8000/predict', formData);
+      const res = await axios.post('https://stroke-prediction-7mdn.onrender.com/predict', formData);
       setResponse(res.data);
       setShowPopup(true);
       console.log('Response from backend:', res.data);
