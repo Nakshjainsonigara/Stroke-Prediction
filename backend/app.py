@@ -7,11 +7,15 @@ import pandas as pd
 import joblib
 from sklearn.pipeline import Pipeline
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
+current_directory = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_directory, 'lda_model.pkl')
+preprocessing_path = os.path.join(current_directory, 'preprocessing_pipeline.pkl')
 
-# Load your pre-trained model and preprocessing pipeline
-model = joblib.load('backend\lda_model.pkl')
-preprocessing_pipeline = joblib.load('backend\lda_model.pkl')  # Assuming you saved the pipeline too
+# Load the model
+model = joblib.load(model_path)
+preprocessing_pipeline = joblib.load(preprocessing_path)  # Assuming you saved the pipeline too
 
 # Initialize FastAPI app
 app = FastAPI()
