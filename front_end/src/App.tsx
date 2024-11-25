@@ -59,6 +59,12 @@ const styles = {
     borderRadius: '5px',
     textAlign: 'center',
   },
+  message: {
+    textAlign: 'center',
+    fontSize: '14px', 
+    color: '#555', 
+    marginTop: '10px', 
+  },
 };
 
 export default function App() {
@@ -102,6 +108,9 @@ export default function App() {
     <div style={styles.container}>
       <h1 style={{ textAlign: 'center' }}>Stroke Risk Assessment</h1>
       <form onSubmit={handleSubmit} style={styles.form}>
+      <p style={styles.message}>
+        The prediction model is deployed on Render, which may cause slower response times. The estimated time for generating an output is approximately 4-5 minutes. Your patience is greatly appreciated!
+      </p>
         <div style={styles.formGroup}>
           <label style={styles.label}>Avg. Glucose Level:</label>
           <input
